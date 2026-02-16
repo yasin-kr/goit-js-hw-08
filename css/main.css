@@ -1,0 +1,27 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+}
+.gallery li {
+  cursor: pointer;
+}
+.gallery-image {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.basicLightbox {
+  background: rgba(0, 0, 0, 0.8);
+}
+.gallery-item {
+  overflow: hidden;
+}
