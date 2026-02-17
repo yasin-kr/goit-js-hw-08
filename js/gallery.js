@@ -66,12 +66,13 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
+let markup = "";
+
 for (const { preview, original, description } of images) {
   const newPreview = preview.slice(1, -1);
   const newOriginal = original.slice(1, -1);
-  gallery.insertAdjacentHTML(
-    "beforeend",
-    `<li class="gallery-item">
+
+  markup += `<li class="gallery-item">
   <a class="gallery-link" href="${newOriginal}">
     <img
       class="gallery-image"
@@ -83,10 +84,10 @@ for (const { preview, original, description } of images) {
     />
   </a>
 </li>
-`,
-  );
+`;
 }
 
+gallery.insertAdjacentHTML("beforeend", markup);
 gallery.addEventListener("click", onGalleryClick);
 
 function onGalleryClick(e) {
